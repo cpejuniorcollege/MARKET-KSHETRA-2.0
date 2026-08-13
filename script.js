@@ -1,10 +1,5 @@
 /* =========================================
    MARKET KHETRA 2026
-   MAIN JAVASCRIPT
-========================================= */
-
-
-/* =========================================
    GALLERY
 ========================================= */
 
@@ -12,95 +7,192 @@ const gallery = document.getElementById("gallery");
 
 const totalPhotos = 120;
 
+let currentPhoto = 1;
+
+
+/* =========================================
+   CREATE GALLERY
+========================================= */
+
 for (let i = 1; i <= totalPhotos; i++) {
 
     const item = document.createElement("div");
 
-    item.classList.add("gallery-item");
+    item.className = "gallery-item";
 
     const image = document.createElement("img");
 
     image.src = `assets/images/gallery${i}.jpg`;
 
-    image.alt = `Market Kshetra Stall ${i}`;
+    image.alt = `Market Kshetra stall ${i}`;
 
     image.loading = "lazy";
 
-    /*
-       If an image doesn't exist yet,
-       hide that gallery box instead of
-       showing a broken image.
-    */
-
     image.onerror = function () {
-        item.style.display = "none";
+        item.remove();
     };
 
     item.appendChild(image);
+
+    item.addEventListener("click", function () {
+        openPhoto(i);
+    });
 
     gallery.appendChild(item);
 }
 
 
 /* =========================================
-   SCROLL REVEAL
+   LIGHTBOX
 ========================================= */
 
-const revealElements =
-    document.querySelectorAll(
-        ".section-heading, .gallery-item, .about-content, .info-card, .contact-item"
-    );
+const lightbox = document.createElement("div");
+
+lightbox.className = "lightbox";
+
+lightbox.innerHTML = `
+    <button class="lightbox-close">×</button>
+
+    <button class="lightbox-prev">‹</button>
+
+    <img class="lightbox-image" src="" alt="">
+
+    <button class="lightbox-next">›</button>
+`;
+
+document.body.appendChild(lightbox);
 
 
-const revealObserver =
-    new IntersectionObserver(
-        (entries) => {
+const lightboxImage =
+    lightbox.querySelector(".lightbox-image");
 
-            entries.forEach((entry) => {
+const closeButton =
+    lightbox.querySelector(".lightbox-close");
 
-                if (entry.isIntersecting) {
+const previousButton =
+    lightbox.querySelector(".lightbox-prev");
 
-                    entry.target.classList.add("show");
-
-                    revealObserver.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
+const nextButton =
+    lightbox.querySelector(".lightbox-next");
 
 
-revealElements.forEach((element) => {
+/* =========================================
+   OPEN PHOTO
+========================================= */
 
-    revealObserver.observe(element);
+function openPhoto(number) {
+
+    currentPhoto = number;
+
+    lightboxImage.src =
+        `assets/images/gallery${currentPhoto}.jpg`;
+
+    lightbox.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* =========================================
+   CLOSE PHOTO
+========================================= */
+
+function closePhoto() {
+
+    lightbox.classList.remove("active");
+
+    document.body.style.overflow = "";
+}
+
+
+closeButton.addEventListener(
+    "click",
+    closePhoto
+);
+
+
+/* =========================================
+   NEXT PHOTO
+========================================= */
+
+function nextPhoto() {
+
+    currentPhoto++;
+
+    if (currentPhoto > totalPhotos) {
+        currentPhoto = 1;
+    }
+
+    lightboxImage.src =
+        `assets/images/gallery${currentPhoto}.jpg`;
+}
+
+
+nextButton.addEventListener(
+    "click",
+    nextPhoto
+);
+
+
+/* =========================================
+   PREVIOUS PHOTO
+========================================= */
+
+function previousPhoto() {
+
+    currentPhoto--;
+
+    if (currentPhoto < 1) {
+        currentPhoto = totalPhotos;
+    }
+
+    lightboxImage.src =
+        `assets/images/gallery${currentPhoto}.jpg`;
+}
+
+
+previousButton.addEventListener(
+    "click",
+    previousPhoto
+);
+
+
+/* =========================================
+   KEYBOARD CONTROLS
+========================================= */
+
+document.addEventListener("keydown", function (event) {
+
+    if (!lightbox.classList.contains("active")) {
+        return;
+    }
+
+    if (event.key === "Escape") {
+        closePhoto();
+    }
+
+    if (event.key === "ArrowRight") {
+        nextPhoto();
+    }
+
+    if (event.key === "ArrowLeft") {
+        previousPhoto();
+    }
 
 });
 
 
 /* =========================================
-   BUTTON SMOOTH SCROLL
+   CLOSE WHEN CLICKING OUTSIDE IMAGE
 ========================================= */
 
-const exploreButton =
-    document.querySelector(".explore-btn");
+lightbox.addEventListener(
+    "click",
+    function (event) {
 
+        if (event.target === lightbox) {
+            closePhoto();
+        }
 
-exploreButton.addEventListener("click", function (event) {
-
-    event.preventDefault();
-
-    const target =
-        document.querySelector("#explore");
-
-    target.scrollIntoView({
-        behavior: "smooth"
-    });
-
-});
+    }
+);
