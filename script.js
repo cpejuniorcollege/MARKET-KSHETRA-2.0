@@ -20,7 +20,7 @@ for (let i = 1; i <= totalPhotos; i++) {
 
     const image = document.createElement("img");
 
-    image.src = `assets/gallery${i}.jpg`;
+    image.src = `assets/images/gallery${i}.jpg`;
 
     image.alt = `Market Kshetra Stall ${i}`;
 
