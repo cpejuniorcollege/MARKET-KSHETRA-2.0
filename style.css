@@ -1774,7 +1774,7 @@ footer {
     .college-brand {
         gap: 11px;
         margin-bottom: 28px;
-        padding: 8px 12px;
+        padding: 0;
     }
 
     .college-brand img {
