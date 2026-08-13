@@ -695,3 +695,27 @@ footer {
         gap: 8px;
     }
 }
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.section-heading,
+.gallery-item,
+.about-content,
+.info-card,
+.contact-item {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.section-heading.show,
+.gallery-item.show,
+.about-content.show,
+.info-card.show,
+.contact-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
