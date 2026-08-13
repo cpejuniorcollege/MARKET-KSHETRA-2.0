@@ -657,17 +657,61 @@ a {
    EVENT INFO
 ========================================= */
 
+/* =========================================
+   EVENT INFORMATION — PREMIUM
+========================================= */
+
 .event-info {
+    position: relative;
+
     background: var(--orange);
 
     color: var(--cream);
+
+    overflow: hidden;
+}
+
+.event-info::before {
+    content: "2026";
+
+    position: absolute;
+
+    right: -30px;
+    bottom: -90px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(180px, 28vw, 400px);
+
+    font-weight: 700;
+
+    color: rgba(255, 255, 255, 0.07);
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+.event-info .section-heading {
+    position: relative;
+    z-index: 2;
 }
 
 .event-info .section-heading p {
     color: var(--cream);
 }
 
+.event-info .section-heading h2 {
+    color: var(--cream);
+}
+
+
+/* INFORMATION GRID */
+
 .info-container {
+    position: relative;
+    z-index: 2;
+
     max-width: 1200px;
 
     margin: auto;
@@ -676,23 +720,67 @@ a {
 
     grid-template-columns: repeat(3, 1fr);
 
-    border-top: 1px solid rgba(250, 245, 235, 0.35);
-    border-bottom: 1px solid rgba(250, 245, 235, 0.35);
+    border-top: 1px solid rgba(250, 245, 235, 0.45);
+
+    border-bottom: 1px solid rgba(250, 245, 235, 0.45);
 }
 
+
+/* CARD */
+
 .info-card {
-    min-height: 300px;
+    min-height: 330px;
 
     padding: 45px;
 
-    border-right: 1px solid rgba(250, 245, 235, 0.35);
+    position: relative;
+
+    border-right: 1px solid rgba(250, 245, 235, 0.45);
+
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease;
 }
 
 .info-card:last-child {
     border-right: none;
 }
 
+.info-card:hover {
+    background: rgba(0, 0, 0, 0.08);
+
+    transform: translateY(-5px);
+}
+
+
+/* NUMBER */
+
+.info-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: var(--cream);
+
+    transition: width 0.4s ease;
+}
+
+.info-card:hover::before {
+    width: 100%;
+}
+
+
+/* LABEL */
+
 .info-card span {
+    display: block;
+
     font-size: 10px;
 
     letter-spacing: 4px;
@@ -700,20 +788,61 @@ a {
     opacity: 0.75;
 }
 
+
+/* MAIN VALUE */
+
 .info-card h3 {
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(45px, 5vw, 70px);
+    font-size: clamp(48px, 5vw, 75px);
 
-    margin-top: 55px;
+    line-height: 0.95;
+
+    margin-top: 65px;
+
+    letter-spacing: -3px;
 }
 
+
+/* SUBTEXT */
+
 .info-card p {
-    margin-top: 5px;
+    margin-top: 12px;
 
     font-size: 11px;
 
     letter-spacing: 3px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        min-height: 240px;
+
+        border-right: none;
+
+        border-bottom: 1px solid rgba(250, 245, 235, 0.45);
+    }
+
+    .info-card:last-child {
+        border-bottom: none;
+    }
+
+    .info-card h3 {
+        margin-top: 40px;
+    }
+
 }
 
 
