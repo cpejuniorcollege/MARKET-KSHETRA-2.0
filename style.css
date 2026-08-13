@@ -2157,55 +2157,78 @@ footer {
     }
 }
 /* =========================================
-   HERO — FINAL TWO COLUMN FIX
+   FINAL HERO — SINGLE CENTERED INVITATION
 ========================================= */
 
 .hero-layout {
-    width: min(1200px, 92vw);
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    align-items: center;
-    gap: 70px;
-    position: relative;
-    z-index: 2;
+    display: block !important;
+    width: auto !important;
 }
 
-.hero-layout .college-brand {
+.invitation {
+    width: min(900px, 92vw) !important;
+    margin: 0 auto !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    text-align: center !important;
+}
+
+/* CPE BRAND ABOVE "CORDIALLY INVITE YOU TO" */
+
+.invitation .college-brand {
+    order: -10 !important;
+
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 14px !important;
 
     width: fit-content !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
+
+    margin: 0 auto 35px !important;
 
     position: relative !important;
+    top: auto !important;
+    left: auto !important;
+
     transform: none !important;
 }
 
-.hero-layout .invitation {
-    width: 100% !important;
-    margin: 0 !important;
-    text-align: center;
+/* CPE LOGO */
+
+.invitation .college-brand img {
+    width: 68px !important;
+    height: 54px !important;
+
+    object-fit: contain !important;
 }
 
+/* CPE JUNIOR COLLEGE */
+
+.invitation .college-name {
+    text-align: left !important;
+}
+
+/* CORDIALLY TEXT */
+
+.invitation .presented {
+    margin-bottom: 20px !important;
+}
 
 /* MOBILE */
 
 @media (max-width: 800px) {
 
-    .hero-layout {
-        grid-template-columns: 1fr;
-        gap: 35px;
+    .invitation {
+        width: 100% !important;
+        padding: 45px 20px !important;
     }
 
-    .hero-layout .college-brand {
-        margin: 0 auto !important;
+    .invitation .college-brand {
+        margin-bottom: 28px !important;
     }
 
-    .hero-layout .invitation {
-        padding: 40px 20px !important;
-    }
 }
