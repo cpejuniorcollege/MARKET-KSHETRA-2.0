@@ -121,31 +121,42 @@ a {
 
 
 /* =========================================
-   CPE BRAND
+   CPE BRAND — INVITATION HEADER
 ========================================= */
 
 .college-brand {
-    display: flex;
+    display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
-    gap: 15px;
+    gap: 16px;
 
-    margin-bottom: 35px;
+    margin-bottom: 38px;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(23, 22, 21, 0.12);
+
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .college-brand img {
-    width: 70px;
-    height: 55px;
+    width: 68px;
+    height: 54px;
 
-    object-fit: cover;
+    object-fit: contain;
 
-    border-radius: 4px;
+    mix-blend-mode: multiply;
 }
 
 .college-name {
     text-align: left;
+
+    border-left: 1px solid rgba(198, 93, 46, 0.5);
+
+    padding-left: 16px;
 }
 
 .college-name span {
@@ -153,7 +164,9 @@ a {
 
     color: var(--orange);
 
-    font-size: 10px;
+    font-size: 9px;
+
+    font-weight: 700;
 
     letter-spacing: 4px;
 
@@ -161,13 +174,12 @@ a {
 }
 
 .college-name h3 {
-    font-size: 16px;
+    font-size: 15px;
 
     letter-spacing: 2px;
 
     font-weight: 700;
 }
-
 
 /* =========================================
    PRESENTED TEXT
