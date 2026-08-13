@@ -1913,3 +1913,15 @@ body::after {
     padding: 10px;
     font-size: 14px;
 }
+.section-heading,
+.about-content,
+.info-card,
+.contact-item {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.gallery-item {
+    opacity: 1 !important;
+    transform: none !important;
+}
