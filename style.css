@@ -125,26 +125,32 @@ a {
 ========================================= */
 
 .college-brand {
-    display: inline-flex;
+    position: absolute;
+
+    top: 55px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
-    gap: 16px;
+    gap: 8px;
 
-    margin-bottom: 38px;
+    padding: 0;
 
-    padding: 10px 18px;
+    border: none;
+    background: transparent;
 
-    border: 1px solid rgba(23, 22, 21, 0.12);
-
-    background: rgba(255, 255, 255, 0.25);
+    z-index: 5;
 }
 
 .college-brand img {
-    width: 68px;
-    height: 54px;
+    width: 75px;
+    height: 60px;
 
     object-fit: contain;
 
@@ -152,11 +158,11 @@ a {
 }
 
 .college-name {
-    text-align: left;
+    text-align: center;
 
-    border-left: 1px solid rgba(198, 93, 46, 0.5);
+    border-left: none;
 
-    padding-left: 16px;
+    padding-left: 0;
 }
 
 .college-name span {
@@ -170,17 +176,16 @@ a {
 
     letter-spacing: 4px;
 
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .college-name h3 {
-    font-size: 15px;
+    font-size: 13px;
 
     letter-spacing: 2px;
 
     font-weight: 700;
 }
-
 /* =========================================
    PRESENTED TEXT
 ========================================= */
