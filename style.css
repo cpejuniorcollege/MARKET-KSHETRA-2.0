@@ -1709,3 +1709,33 @@ footer {
 .explore-btn:hover span {
     transform: translateY(4px);
 }
+/* =========================================
+   EVENT INFO INTRO
+========================================= */
+
+.info-intro {
+    position: relative;
+    z-index: 2;
+
+    max-width: 560px;
+
+    margin: -35px auto 55px;
+
+    text-align: center;
+
+    color: rgba(250, 245, 235, 0.75);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+
+    .info-intro {
+        margin: -25px auto 40px;
+
+        font-size: 13px;
+    }
+
+}
