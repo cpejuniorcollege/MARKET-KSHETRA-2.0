@@ -2156,3 +2156,56 @@ footer {
         letter-spacing: 1.5px !important;
     }
 }
+/* =========================================
+   HERO — FINAL TWO COLUMN FIX
+========================================= */
+
+.hero-layout {
+    width: min(1200px, 92vw);
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 70px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-layout .college-brand {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+
+    width: fit-content !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    position: relative !important;
+    transform: none !important;
+}
+
+.hero-layout .invitation {
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: center;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .hero-layout .college-brand {
+        margin: 0 auto !important;
+    }
+
+    .hero-layout .invitation {
+        padding: 40px 20px !important;
+    }
+}
