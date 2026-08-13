@@ -850,35 +850,125 @@ a {
    CONTACT
 ========================================= */
 
+/* =========================================
+   CONTACT US — FINAL SECTION
+========================================= */
+
 .contact-section {
+    position: relative;
+
     background: var(--cream);
+
+    overflow: hidden;
 }
 
-.contact-container {
+.contact-section::after {
+    content: "CONTACT";
+
+    position: absolute;
+
+    right: -40px;
+    bottom: -60px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(120px, 20vw, 300px);
+
+    font-weight: 700;
+
+    color: rgba(198, 93, 46, 0.055);
+
+    pointer-events: none;
+}
+
+.contact-section .section-heading {
+    position: relative;
+    z-index: 2;
+
+    text-align: left;
+
     max-width: 1000px;
 
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-section .section-heading h2 {
+    font-size: clamp(55px, 8vw, 105px);
+}
+
+
+/* CONTACT LIST */
+
+.contact-container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
 
     border-top: 1px solid var(--line);
 }
 
+
+/* EACH CONTACT */
+
 .contact-item {
+    position: relative;
+
     display: flex;
 
     justify-content: space-between;
 
     align-items: center;
 
-    padding: 25px 5px;
+    padding: 27px 5px;
 
     border-bottom: 1px solid var(--line);
 
-    transition: padding 0.3s ease;
+    overflow: hidden;
+
+    transition:
+        padding 0.35s ease,
+        color 0.35s ease;
+}
+
+
+/* ORANGE HOVER BACKGROUND */
+
+.contact-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 100%;
+
+    background: var(--orange);
+
+    z-index: -1;
+
+    transition: width 0.4s ease;
+}
+
+.contact-item:hover::before {
+    width: 100%;
 }
 
 .contact-item:hover {
-    padding-left: 15px;
+    padding-left: 20px;
+
+    padding-right: 20px;
+
+    color: var(--cream);
 }
+
+
+/* LABEL */
 
 .contact-item span {
     color: var(--orange);
@@ -886,12 +976,53 @@ a {
     font-size: 9px;
 
     letter-spacing: 3px;
+
+    transition: color 0.3s ease;
 }
+
+.contact-item:hover span {
+    color: var(--cream);
+}
+
+
+/* VALUE */
 
 .contact-item strong {
     font-size: 14px;
+
+    letter-spacing: 0.5px;
+
+    transition: transform 0.35s ease;
 }
 
+.contact-item:hover strong {
+    transform: translateX(-5px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .contact-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 9px;
+
+        padding: 22px 0;
+    }
+
+    .contact-item:hover {
+        padding-left: 12px;
+
+        padding-right: 12px;
+    }
+
+}
 
 /* =========================================
    FOOTER
