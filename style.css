@@ -125,13 +125,12 @@ a {
 ========================================= */
 
 .college-brand {
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    gap: 8px;
+    gap: 14px;
 
     margin-bottom: 38px;
 
@@ -144,22 +143,31 @@ a {
     z-index: 5;
 }
 
+
+/* CPE LOGO */
+
 .college-brand img {
-    width: 75px;
-    height: 60px;
+    width: 68px;
+    height: 54px;
 
     object-fit: contain;
 
     mix-blend-mode: multiply;
 }
 
+
+/* COLLEGE NAME */
+
 .college-name {
-    text-align: center;
+    text-align: left;
 
-    border-left: none;
+    border-left: 1px solid rgba(198, 93, 46, 0.5);
 
-    padding-left: 0;
+    padding-left: 14px;
 }
+
+
+/* SMALL TEXT */
 
 .college-name span {
     display: block;
@@ -172,11 +180,14 @@ a {
 
     letter-spacing: 4px;
 
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
+
+/* COLLEGE NAME */
+
 .college-name h3 {
-    font-size: 13px;
+    font-size: 15px;
 
     letter-spacing: 2px;
 
