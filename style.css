@@ -480,8 +480,13 @@ a {
 
     object-fit: cover;
 
+    background: #242220;
+
     transition:
         transform 0.7s cubic-bezier(.2,.7,.2,1);
+}
+.gallery-item {
+    contain: layout paint;
 }
 
 .gallery-item:hover {
