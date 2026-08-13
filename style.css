@@ -2049,3 +2049,110 @@ footer {
         letter-spacing: 1.5px !important;
     }
 }
+/* =========================================
+   CPE BRAND — TOP OF INVITATION
+========================================= */
+
+.invitation {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.college-brand {
+    order: -10 !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: fit-content !important;
+
+    margin: -25px auto 35px !important;
+
+    gap: 14px !important;
+
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+.college-brand img {
+    width: 68px !important;
+    height: 54px !important;
+
+    object-fit: contain !important;
+
+    margin: 0 !important;
+}
+
+.college-name {
+    text-align: left !important;
+
+    padding-left: 14px !important;
+
+    margin: 0 !important;
+
+    border-left: 1px solid rgba(198, 93, 46, 0.5) !important;
+}
+
+.college-name span {
+    display: block !important;
+
+    color: var(--orange) !important;
+
+    font-size: 9px !important;
+
+    letter-spacing: 4px !important;
+
+    font-weight: 700 !important;
+
+    margin-bottom: 4px !important;
+}
+
+.college-name h3 {
+    display: block !important;
+
+    margin: 0 !important;
+
+    font-size: 15px !important;
+
+    letter-spacing: 2px !important;
+
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .college-brand {
+        margin: -20px auto 28px !important;
+        gap: 10px !important;
+    }
+
+    .college-brand img {
+        width: 55px !important;
+        height: 45px !important;
+    }
+
+    .college-name {
+        padding-left: 10px !important;
+    }
+
+    .college-name span {
+        font-size: 8px !important;
+        letter-spacing: 3px !important;
+    }
+
+    .college-name h3 {
+        font-size: 12px !important;
+        letter-spacing: 1.5px !important;
+    }
+}
