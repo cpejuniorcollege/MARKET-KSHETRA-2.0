@@ -1917,3 +1917,13 @@ const revealObserver = new IntersectionObserver(
 revealElements.forEach((element) => {
     revealObserver.observe(element);
 });
+/* TEMPORARY VISIBILITY FIX */
+
+.section-heading,
+.gallery-item,
+.about-content,
+.info-card,
+.contact-item {
+    opacity: 1 !important;
+    transform: none !important;
+}
