@@ -1739,3 +1739,156 @@ footer {
     }
 
 }
+/* =========================================
+   FINAL MOBILE POLISH
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+        padding: 25px 14px;
+    }
+
+    .invitation {
+        width: 100%;
+        padding: 42px 18px;
+    }
+
+    .invitation h1 {
+        font-size: clamp(48px, 16vw, 70px);
+        letter-spacing: -3px;
+    }
+
+    .invitation-text {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+
+    /* CPE BRAND */
+
+    .college-brand {
+        gap: 11px;
+        margin-bottom: 28px;
+        padding: 8px 12px;
+    }
+
+    .college-brand img {
+        width: 55px;
+        height: 45px;
+    }
+
+    .college-name {
+        padding-left: 11px;
+    }
+
+    .college-name span {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .college-name h3 {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+
+    /* EVENT DETAILS */
+
+    .detail {
+        padding: 17px 10px;
+    }
+
+    .detail strong {
+        font-size: 10px;
+    }
+
+
+    /* EXPLORE BUTTON */
+
+    .explore-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    /* SECTION SPACING */
+
+    .explore-section,
+    .about-section,
+    .event-info,
+    .contact-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+
+    /* SECTION HEADINGS */
+
+    .section-heading {
+        margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+
+    /* GALLERY */
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .gallery-item {
+        aspect-ratio: 4 / 5;
+    }
+
+
+    /* ABOUT */
+
+    .about-content p:first-child {
+        font-size: 21px;
+        line-height: 1.45;
+    }
+
+    .about-content p:not(:first-child) {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+
+    /* EVENT INFO */
+
+    .info-card {
+        min-height: 220px;
+        padding: 30px;
+    }
+
+    .info-card h3 {
+        font-size: 52px;
+        margin-top: 35px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-item strong {
+        font-size: 13px;
+        word-break: break-word;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
