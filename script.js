@@ -14,7 +14,7 @@ let currentPhoto = 1;
    CREATE GALLERY
 ========================================= */
 
-for (let i = 1; i <= totalPhotos; i++) {
+for (let i = 2; i <= totalPhotos; i++) {
 
     const item = document.createElement("div");
 
