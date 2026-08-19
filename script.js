@@ -89,6 +89,38 @@ function openPhoto(number) {
     lightboxImage.src =
         `assets/images/gallery${currentPhoto}.jpg`;
 
+    let details = lightbox.querySelector(".stall-details");
+
+    if (!details) {
+
+        details = document.createElement("div");
+
+        details.className = "stall-details";
+
+        lightbox.appendChild(details);
+    }
+
+    const stall = stallDetails[number] || {
+        name: "",
+        members: ""
+    };
+
+    details.innerHTML = `
+        <div class="stall-number">
+            STALL ${String(number).padStart(2, "0")}
+        </div>
+
+        <div class="stall-info">
+            <span>STALL NAME:</span>
+            <strong>${stall.name}</strong>
+        </div>
+
+        <div class="stall-info">
+            <span>MEMBERS:</span>
+            <strong>${stall.members}</strong>
+        </div>
+    `;
+
     lightbox.classList.add("active");
 
     document.body.style.overflow = "hidden";
