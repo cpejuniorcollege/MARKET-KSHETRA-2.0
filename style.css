@@ -2331,3 +2331,37 @@ footer {
     letter-spacing: -0.04em;
     text-transform: uppercase;
 }
+/* =========================================
+   STALL DETAILS - MOBILE
+========================================= */
+
+.stall-details {
+    width: 90%;
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+.stall-number {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 22px;
+}
+
+.stall-info {
+    margin-bottom: 14px;
+}
+
+.stall-info span {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+}
+
+.stall-info strong {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
