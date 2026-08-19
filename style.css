@@ -2232,3 +2232,17 @@ footer {
     }
 
 }
+.hero-invitation-image {
+    width: min(90%, 520px);
+    margin: 32px auto 36px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-invitation-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 8px;
+}
