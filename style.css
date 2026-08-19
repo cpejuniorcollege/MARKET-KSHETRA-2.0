@@ -2250,41 +2250,40 @@ footer {
    FEATURED ABHIRAM STALL
 ========================================= */
 
+/* =========================================
+   FEATURED FIRST STALL
+========================================= */
+
 .featured-stall {
     grid-column: 1 / -1;
 
     width: 100%;
-    max-width: 500px;
 
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    text-align: center;
+    margin: 0 auto 20px;
 }
 
 .featured-photo {
-    width: 420px;
-    max-width: 100%;
+    width: 360px;
+    max-width: 85%;
 
     height: auto;
 
     display: block;
-
-    margin: 0 auto;
-
-    object-fit: contain;
 }
 
 .featured-title {
-    margin-top: 20px;
+    margin-top: 16px;
 
     text-align: center;
 
-    font-size: clamp(1rem, 3vw, 1.35rem);
-
+    font-size: 18px;
     font-weight: 700;
 
-    letter-spacing: 0.12em;
-
+    letter-spacing: 2px;
     line-height: 1.5;
 }
 
@@ -2297,13 +2296,13 @@ footer {
 
 @media (max-width: 600px) {
 
-    .featured-stall {
-        max-width: 100%;
-    }
-
     .featured-photo {
-        width: 330px;
-        max-width: 90%;
+        width: 280px;
+        max-width: 80%;
     }
 
+    .featured-title {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
 }
