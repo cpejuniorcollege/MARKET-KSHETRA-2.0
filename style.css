@@ -2274,3 +2274,12 @@ footer {
 .featured-title span {
     display: block;
 }
+@media (max-width: 600px) {
+    .featured-stall {
+        max-width: 380px;
+    }
+
+    .featured-photo {
+        max-width: 380px;
+    }
+}
