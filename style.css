@@ -2306,3 +2306,28 @@ footer {
         letter-spacing: 1.5px;
     }
 }
+/* =========================
+   MORE TO EXPLORE
+========================= */
+
+.more-explore {
+    padding: 140px 8% 120px;
+    text-align: center;
+}
+
+.more-explore-content p {
+    margin: 0 0 18px;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.more-explore-content h2 {
+    margin: 0;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
