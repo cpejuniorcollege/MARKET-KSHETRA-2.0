@@ -2275,5 +2275,7 @@ footer {
     display: block;
 }
 .gallery-item:first-child img {
-    object-position: center center;
+   object-fit: cover;
+    object-position: 50% 50%;
+   transform: translateX(0);
 }
