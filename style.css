@@ -2274,3 +2274,6 @@ footer {
 .featured-title span {
     display: block;
 }
+.gallery-item:first-child img {
+    object-position: center center;
+}
