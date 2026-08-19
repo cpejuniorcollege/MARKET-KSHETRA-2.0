@@ -2246,6 +2246,10 @@ footer {
     object-fit: contain;
     border-radius: 8px;
 }
+/* =========================================
+   FEATURED ABHIRAM STALL
+========================================= */
+
 .featured-stall {
     grid-column: 1 / -1;
 
@@ -2253,34 +2257,53 @@ footer {
     max-width: 500px;
 
     margin: 0 auto;
-   transform: translateX(8px);
+
+    text-align: center;
 }
 
 .featured-photo {
-    width: min(78%, 420px);
+    width: 420px;
+    max-width: 100%;
+
     height: auto;
+
     display: block;
+
+    margin: 0 auto;
+
     object-fit: contain;
 }
 
 .featured-title {
     margin-top: 20px;
+
     text-align: center;
+
     font-size: clamp(1rem, 3vw, 1.35rem);
+
     font-weight: 700;
+
     letter-spacing: 0.12em;
+
     line-height: 1.5;
 }
 
 .featured-title span {
     display: block;
 }
+
+
+/* PHONE */
+
 @media (max-width: 600px) {
+
     .featured-stall {
-        max-width: 380px;
+        max-width: 100%;
     }
 
     .featured-photo {
-        max-width: 380px;
+        width: 330px;
+        max-width: 90%;
     }
+
 }
