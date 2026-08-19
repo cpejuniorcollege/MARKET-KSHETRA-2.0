@@ -9,6 +9,8 @@ const totalPhotos = 120;
 
 let currentPhoto = 1;
 
+const stallDetails = {};
+
 
 /* =========================================
    CREATE GALLERY
