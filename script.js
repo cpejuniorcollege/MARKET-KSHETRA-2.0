@@ -110,33 +110,6 @@ for (let i = 1; i <= chanakyaTotalPhotos; i++) {
     gallery.appendChild(item);
 }
 
-    const item = document.createElement("div");
-
-    item.className = "gallery-item";
-
-    const image = document.createElement("img");
-
-    image.src = `assets/images/gallery${i}.jpg`;
-
-    image.alt =
-        `Sri Chanakya Degree College photo ${i - chanakyaStart + 1}`;
-
-    image.loading = "lazy";
-
-    image.onerror = function () {
-        item.remove();
-    };
-
-    item.appendChild(image);
-
-    item.addEventListener("click", function () {
-        openPhoto(i);
-    });
-
-    gallery.appendChild(item);
-}
-
-
 /* =========================================
    LIGHTBOX
 ========================================= */
