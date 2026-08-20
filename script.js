@@ -115,10 +115,6 @@ for (let i = 1; i <= chanakyaTotalPhotos; i++) {
 
     image.loading = "lazy";
 
-    image.onerror = function () {
-        item.remove();
-    };
-
    const photoWrapper = document.createElement("div");
 
 photoWrapper.className = "photo-wrapper";
@@ -135,6 +131,10 @@ stallNumber.textContent =
     `STALL ${String(cpeTotalPhotos + i).padStart(2, "0")}`;
 
 item.appendChild(stallNumber);
+
+   item.addEventListener("click", function () {
+    openPhoto(cpeTotalPhotos + i);
+});
 
     gallery.appendChild(item);
 }
