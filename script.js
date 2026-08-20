@@ -30,7 +30,7 @@ gallery.appendChild(cpeHeading);
 // gallery1.jpg → gallery38.jpg
 // Future CPE photos can continue from gallery39.jpg
 
-const cpeTotalPhotos = 59;
+const cpeTotalPhotos = 60;
 
 for (let i = 1; i <= cpeTotalPhotos; i++) {
 
