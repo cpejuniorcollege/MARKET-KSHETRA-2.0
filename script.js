@@ -32,7 +32,7 @@ gallery.appendChild(cpeHeading);
 
 const cpeTotalPhotos = 59;
 
-for (let i = 1; i <= cpeTotalPhotos; i++) {
+for (let i = 2; i <= cpeTotalPhotos; i++) {
 
     const item = document.createElement("div");
 
