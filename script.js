@@ -119,13 +119,20 @@ for (let i = 1; i <= chanakyaTotalPhotos; i++) {
         item.remove();
     };
 
-    item.appendChild(image);
+   const photoWrapper = document.createElement("div");
 
-   const stallNumber = document.createElement("div");
+photoWrapper.className = "photo-wrapper";
+
+photoWrapper.appendChild(image);
+
+item.appendChild(photoWrapper);
+
+const stallNumber = document.createElement("div");
 
 stallNumber.className = "stall-number";
 
-stallNumber.textContent = `STALL ${String(cpeTotalPhotos + i).padStart(2, "0")}`;
+stallNumber.textContent =
+    `STALL ${String(cpeTotalPhotos + i).padStart(2, "0")}`;
 
 item.appendChild(stallNumber);
 
