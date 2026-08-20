@@ -11,12 +11,28 @@ let currentPhoto = 1;
 
 const stallDetails = {};
 
-
 /* =========================================
    CREATE GALLERY
 ========================================= */
 
-for (let i = 2; i <= totalPhotos; i++) {
+// ---------- CPE JUNIOR COLLEGE ----------
+
+const cpeHeading = document.createElement("h2");
+
+cpeHeading.className = "gallery-college-heading";
+
+cpeHeading.textContent = "CPE JUNIOR COLLEGE";
+
+gallery.appendChild(cpeHeading);
+
+
+// CPE PHOTOS
+// gallery1.jpg → gallery38.jpg
+// Future CPE photos can continue from gallery39.jpg
+
+const cpeTotalPhotos = 38;
+
+for (let i = 1; i <= cpeTotalPhotos; i++) {
 
     const item = document.createElement("div");
 
@@ -26,7 +42,68 @@ for (let i = 2; i <= totalPhotos; i++) {
 
     image.src = `assets/images/gallery${i}.jpg`;
 
-    image.alt = `Market Kshetra stall ${i}`;
+    image.alt = `CPE Junior College photo ${i}`;
+
+    image.loading = "lazy";
+
+    image.onerror = function () {
+        item.remove();
+    };
+
+    item.appendChild(image);
+
+    item.addEventListener("click", function () {
+        openPhoto(i);
+    });
+
+    gallery.appendChild(item);
+}
+
+
+// ---------- GAP ----------
+
+const galleryGap = document.createElement("div");
+
+galleryGap.className = "college-gallery-gap";
+
+gallery.appendChild(galleryGap);
+
+
+// ---------- SRI CHANAKYA DEGREE COLLEGE ----------
+
+const chanakyaHeading = document.createElement("h2");
+
+chanakyaHeading.className = "gallery-college-heading";
+
+chanakyaHeading.textContent =
+    "SRI CHANAKYA DEGREE COLLEGE";
+
+gallery.appendChild(chanakyaHeading);
+
+
+// CHANAKYA PHOTOS
+// gallery39.jpg → gallery55.jpg
+// 17 photos
+
+const chanakyaStart = 39;
+const chanakyaTotalPhotos = 17;
+
+for (
+    let i = chanakyaStart;
+    i < chanakyaStart + chanakyaTotalPhotos;
+    i++
+) {
+
+    const item = document.createElement("div");
+
+    item.className = "gallery-item";
+
+    const image = document.createElement("img");
+
+    image.src = `assets/images/gallery${i}.jpg`;
+
+    image.alt =
+        `Sri Chanakya Degree College photo ${i - chanakyaStart + 1}`;
 
     image.loading = "lazy";
 
