@@ -41,10 +41,6 @@ a {
     text-decoration: none;
 }
 
-img {
-    max-width: 100%;
-}
-
 
 /* =========================================
    HERO
@@ -71,10 +67,14 @@ img {
     overflow: hidden;
 }
 
+
+/* Decorative frame */
+
 .hero::before {
     content: "";
 
     position: absolute;
+
     inset: 25px;
 
     border: 1px solid rgba(198, 93, 46, 0.45);
@@ -86,6 +86,7 @@ img {
     content: "";
 
     position: absolute;
+
     inset: 34px;
 
     border: 1px solid rgba(23, 22, 21, 0.12);
@@ -95,7 +96,7 @@ img {
 
 
 /* =========================================
-   INVITATION
+   INVITATION CARD
 ========================================= */
 
 .invitation {
@@ -116,18 +117,16 @@ img {
         0 30px 80px rgba(60, 40, 20, 0.13);
 
     backdrop-filter: blur(8px);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 
 /* =========================================
-   CPE BRAND
+   CPE BRAND — ABOVE INVITATION
 ========================================= */
 
 .college-brand {
+    position: relative;
+
     display: flex;
     flex-direction: row;
 
@@ -136,11 +135,12 @@ img {
 
     gap: 14px;
 
-    width: fit-content;
-
     margin: 0 auto 35px;
 
-    position: relative;
+    padding: 0;
+
+    border: none;
+    background: transparent;
 
     z-index: 5;
 }
@@ -170,6 +170,7 @@ img {
     color: var(--orange);
 
     font-size: 9px;
+
     font-weight: 700;
 
     letter-spacing: 4px;
@@ -178,18 +179,41 @@ img {
 }
 
 .college-name h3 {
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+/* SMALL TEXT */
+
+.college-name span {
+    display: block;
+
+    color: var(--orange);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 4px;
+}
+
+
+/* COLLEGE NAME */
+
+.college-name h3 {
     font-size: 15px;
 
     letter-spacing: 2px;
 
     font-weight: 700;
-
-    white-space: nowrap;
 }
-
-
 /* =========================================
-   PRESENTED
+   PRESENTED TEXT
 ========================================= */
 
 .presented {
@@ -204,7 +228,7 @@ img {
 
 
 /* =========================================
-   EVENT TITLE
+   MARKET KHETRA TITLE
 ========================================= */
 
 .invitation h1 {
@@ -259,7 +283,7 @@ img {
 
 
 /* =========================================
-   INVITATION TEXT
+   INVITATION MESSAGE
 ========================================= */
 
 .invitation-text {
@@ -280,8 +304,6 @@ img {
 ========================================= */
 
 .hero-details {
-    width: 100%;
-
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
@@ -324,42 +346,13 @@ img {
 
 
 /* =========================================
-   HERO INVITATION IMAGE
-========================================= */
-
-.hero-invitation-image {
-    width: min(90%, 520px);
-
-    margin: 32px auto 36px;
-
-    display: flex;
-
-    justify-content: center;
-}
-
-.hero-invitation-image img {
-    width: 100%;
-    height: auto;
-
-    display: block;
-
-    object-fit: contain;
-
-    border-radius: 8px;
-}
-
-
-/* =========================================
    EXPLORE BUTTON
 ========================================= */
 
 .explore-btn {
-    position: relative;
-
     display: inline-flex;
 
     align-items: center;
-    justify-content: center;
 
     gap: 15px;
 
@@ -373,28 +366,7 @@ img {
 
     letter-spacing: 3px;
 
-    overflow: hidden;
-
-    isolation: isolate;
-
-    transition:
-        all 0.35s ease;
-}
-
-.explore-btn::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background: var(--orange);
-
-    transform: translateY(100%);
-
-    transition:
-        transform 0.4s cubic-bezier(.2,.7,.2,1);
-
-    z-index: -1;
+    transition: all 0.35s ease;
 }
 
 .explore-btn span {
@@ -402,30 +374,20 @@ img {
 
     font-size: 17px;
 
-    transition:
-        transform 0.35s ease;
-}
-
-.explore-btn:hover::before {
-    transform: translateY(0);
+    transition: transform 0.35s ease;
 }
 
 .explore-btn:hover {
-    border-color: var(--orange);
+    background: var(--charcoal);
 
     color: var(--cream);
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 12px 25px rgba(198, 93, 46, 0.2);
 }
 
 .explore-btn:hover span {
-    color: var(--cream);
-
-    transform: translateY(4px);
+    transform: translateY(5px);
 }
+
+
 /* =========================================
    SECTION COMMON
 ========================================= */
@@ -472,10 +434,6 @@ img {
     background: var(--charcoal);
 
     color: var(--cream);
-
-    position: relative;
-
-    overflow: hidden;
 }
 
 .explore-section .section-heading span {
@@ -489,13 +447,10 @@ img {
 }
 
 
-/* =========================================
-   GALLERY
-========================================= */
+/* Gallery */
 
 .gallery {
     width: 100%;
-
     max-width: 1000px;
 
     margin: 0 auto;
@@ -505,23 +460,23 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 14px;
-
-    align-items: start;
-
-    overflow: hidden;
 }
 
-
-/* =========================================
-   GALLERY ITEM
-========================================= */
+.gallery-college-heading {
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+    color: var(--cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin: 35px 0 25px;
+}
 
 .gallery-item {
     position: relative;
 
-    width: 100%;
-
-    min-width: 0;
+    aspect-ratio: 1 / 1.15;
 
     overflow: hidden;
 
@@ -529,32 +484,13 @@ img {
 
     padding: 0;
 
-    margin: 0;
-
-    background: transparent;
+    background: #242220;
 
     cursor: pointer;
 
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease;
-}
-
-.gallery-item img {
-    display: block;
-
-    width: 100%;
-    max-width: 100%;
-
-    height: auto;
-
-    aspect-ratio: 3 / 4;
-
-    object-fit: contain;
-
-    background: transparent;
-
-    margin: 0;
 }
 
 .gallery-item::after {
@@ -578,6 +514,23 @@ img {
     pointer-events: none;
 }
 
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    background: #242220;
+
+    transition:
+        transform 0.7s cubic-bezier(.2,.7,.2,1);
+}
+.gallery-item {
+    contain: layout paint;
+}
+
 .gallery-item:hover {
     transform: translateY(-5px);
 
@@ -586,134 +539,24 @@ img {
 }
 
 .gallery-item:hover img {
-    transform: scale(1.03);
+    transform: scale(1.07);
 }
 
 .gallery-item:hover::after {
     opacity: 1;
 }
 
-
 /* =========================================
-   STALL NUMBER
+   ABOUT
 ========================================= */
 
-.stall-number {
-    display: block;
-
-    width: 100%;
-
-    margin-top: 9px;
-
-    text-align: center;
-
-    color: var(--cream);
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: 2.5px;
-
-    line-height: 1.4;
-
-    position: relative;
-
-    z-index: 5;
-}
-
-
 /* =========================================
-   FEATURED FIRST STALL
-========================================= */
-
-.featured-stall {
-    grid-column: 1 / -1;
-
-    width: 100%;
-
-    min-width: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    margin: 0 auto 25px;
-
-    overflow: hidden;
-}
-
-.featured-photo {
-    display: block;
-
-    width: 360px;
-
-    max-width: 85%;
-
-    height: auto;
-
-    aspect-ratio: 3 / 4;
-
-    object-fit: contain;
-}
-
-.featured-title {
-    width: 100%;
-
-    margin-top: 16px;
-
-    text-align: center;
-
-    color: var(--cream);
-
-    font-size: 18px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    line-height: 1.5;
-}
-
-.featured-title span {
-    display: block;
-}
-
-
-/* =========================================
-   GALLERY HEADING
-========================================= */
-
-.gallery-college-heading {
-    grid-column: 1 / -1;
-
-    width: 100%;
-
-    text-align: center;
-
-    color: var(--cream);
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 32px;
-
-    letter-spacing: 1px;
-
-    margin: 35px 0 25px;
-}
-/* =========================================
-   ABOUT THE EVENT
+   ABOUT THE EVENT — PREMIUM LAYOUT
 ========================================= */
 
 .about-section {
     position: relative;
-
     background: var(--beige);
-
     overflow: hidden;
 }
 
@@ -721,12 +564,10 @@ img {
     content: "MK";
 
     position: absolute;
-
     right: -25px;
     top: 80px;
 
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: clamp(180px, 25vw, 360px);
 
     font-weight: 700;
@@ -738,7 +579,6 @@ img {
 
 .about-section .section-heading {
     position: relative;
-
     z-index: 2;
 
     text-align: left;
@@ -753,14 +593,8 @@ img {
     max-width: 700px;
 }
 
-
-/* =========================================
-   ABOUT CONTENT
-========================================= */
-
 .about-content {
     position: relative;
-
     z-index: 2;
 
     max-width: 1200px;
@@ -775,6 +609,9 @@ img {
 
     align-items: start;
 }
+
+
+/* Main opening statement */
 
 .about-content::before {
     content: "01";
@@ -792,9 +629,7 @@ img {
 }
 
 
-/* =========================================
-   FIRST PARAGRAPH
-========================================= */
+/* First paragraph */
 
 .about-content p:first-child {
     margin: 0;
@@ -813,9 +648,7 @@ img {
 }
 
 
-/* =========================================
-   OTHER PARAGRAPHS
-========================================= */
+/* Remaining paragraphs */
 
 .about-content p:not(:first-child) {
     margin: 0 0 28px;
@@ -826,6 +659,9 @@ img {
 
     line-height: 1.9;
 }
+
+
+/* Small visual detail */
 
 .about-content::after {
     content: "CREATIVITY • COMMERCE • EXPERIENCE";
@@ -841,8 +677,47 @@ img {
 
     letter-spacing: 4px;
 }
+
+
 /* =========================================
-   EVENT INFORMATION
+   ABOUT MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .about-section .section-heading {
+        text-align: left;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .about-content p:first-child {
+        padding: 30px 0 30px 22px;
+
+        font-size: 23px;
+    }
+
+    .about-content::after {
+        position: static;
+
+        display: block;
+
+        margin-top: 20px;
+    }
+
+}
+
+
+/* =========================================
+   EVENT INFO
+========================================= */
+
+/* =========================================
+   EVENT INFORMATION — PREMIUM
 ========================================= */
 
 .event-info {
@@ -878,7 +753,6 @@ img {
 
 .event-info .section-heading {
     position: relative;
-
     z-index: 2;
 }
 
@@ -891,36 +765,10 @@ img {
 }
 
 
-/* =========================================
-   INFO INTRO
-========================================= */
-
-.info-intro {
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 560px;
-
-    margin: -35px auto 55px;
-
-    text-align: center;
-
-    color: rgba(250, 245, 235, 0.75);
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================
-   INFORMATION GRID
-========================================= */
+/* INFORMATION GRID */
 
 .info-container {
     position: relative;
-
     z-index: 2;
 
     max-width: 1200px;
@@ -937,9 +785,7 @@ img {
 }
 
 
-/* =========================================
-   INFO CARD
-========================================= */
+/* CARD */
 
 .info-card {
     min-height: 330px;
@@ -966,7 +812,7 @@ img {
 }
 
 
-/* TOP LINE */
+/* NUMBER */
 
 .info-card::before {
     content: "";
@@ -1028,378 +874,1481 @@ img {
 
     opacity: 0.8;
 }
+
+
 /* =========================================
-   STALL NUMBER
+   MOBILE
 ========================================= */
 
-.stall-number {
-    display: block;
-    margin-top: 8px;
-
-    color: var(--cream);
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-    text-align: center;
-}
-/* =========================================
-   EVENT INFO — MOBILE OVERFLOW FIX
-========================================= */
-
-@media (max-width: 600px) {
-
-    .event-info {
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-    }
+@media (max-width: 800px) {
 
     .info-container {
-        width: 100%;
-        max-width: 100%;
         grid-template-columns: 1fr;
     }
 
     .info-card {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        padding: 30px 22px;
-        overflow: hidden;
+        min-height: 240px;
+
+        border-right: none;
+
+        border-bottom: 1px solid rgba(250, 245, 235, 0.45);
+    }
+
+    .info-card:last-child {
+        border-bottom: none;
     }
 
     .info-card h3 {
-        max-width: 100%;
-        overflow-wrap: break-word;
-        word-break: normal;
+        margin-top: 40px;
     }
 
-    .info-card p {
-        max-width: 100%;
-        overflow-wrap: break-word;
-    }
-
-    .info-intro {
-        max-width: 100%;
-        padding: 0 5px;
-    }
 }
+
+
 /* =========================================
-   MOBILE — CONTACT + STAY CONNECTED
-   DESKTOP UNCHANGED
+   CONTACT
+========================================= */
+
+/* =========================================
+   CONTACT US — FINAL SECTION
+========================================= */
+
+.contact-section {
+    position: relative;
+
+    background: var(--cream);
+
+    overflow: hidden;
+}
+
+.contact-section::after {
+    content: "CONTACT";
+
+    position: absolute;
+
+    right: -40px;
+    bottom: -60px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(120px, 20vw, 300px);
+
+    font-weight: 700;
+
+    color: rgba(198, 93, 46, 0.055);
+
+    pointer-events: none;
+}
+
+.contact-section .section-heading {
+    position: relative;
+    z-index: 2;
+
+    text-align: left;
+
+    max-width: 1000px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-section .section-heading h2 {
+    font-size: clamp(55px, 8vw, 105px);
+}
+
+
+/* CONTACT LIST */
+
+.contact-container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    border-top: 1px solid var(--line);
+}
+
+
+/* EACH CONTACT */
+
+.contact-item {
+    position: relative;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 27px 5px;
+
+    border-bottom: 1px solid var(--line);
+
+    overflow: hidden;
+
+    transition:
+        padding 0.35s ease,
+        color 0.35s ease;
+}
+
+
+/* ORANGE HOVER BACKGROUND */
+
+.contact-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 100%;
+
+    background: var(--orange);
+
+    z-index: -1;
+
+    transition: width 0.4s ease;
+}
+
+.contact-item:hover::before {
+    width: 100%;
+}
+
+.contact-item:hover {
+    padding-left: 20px;
+
+    padding-right: 20px;
+
+    color: var(--cream);
+}
+
+
+/* LABEL */
+
+.contact-item span {
+    color: var(--orange);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover span {
+    color: var(--cream);
+}
+
+
+/* VALUE */
+
+.contact-item strong {
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+
+    transition: transform 0.35s ease;
+}
+
+.contact-item:hover strong {
+    transform: translateX(-5px);
+}
+
+
+/* =========================================
+   MOBILE
 ========================================= */
 
 @media (max-width: 600px) {
 
-    /* =========================
-       CONTACT SECTION
-    ========================= */
-
-    .contact-section {
-        padding: 90px 18px 80px;
-        background: var(--cream);
-    }
-
-    .contact-section .section-heading {
-        text-align: center;
-        margin-bottom: 45px;
-    }
-
-    .contact-section .section-heading p {
-        font-size: 9px;
-        letter-spacing: 4px;
-    }
-
-    .contact-section .section-heading h2 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 48px;
-        line-height: .95;
-        letter-spacing: -2px;
-    }
-
-    .contact-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        gap: 10px;
-
-        width: 100%;
-        border: none;
-    }
-
     .contact-item {
-        position: relative;
-
-        min-height: 125px;
-
-        display: flex;
         flex-direction: column;
 
         align-items: flex-start;
-        justify-content: space-between;
 
-        gap: 15px;
+        gap: 9px;
 
-        padding: 20px;
-
-        background: var(--beige);
-
-        border: 1px solid rgba(23,22,21,.12);
-
-        color: var(--charcoal);
-
-        overflow: hidden;
-
-        transition:
-            transform .3s ease,
-            background .3s ease;
-    }
-
-    .contact-item::before {
-        width: 3px;
-        height: 100%;
-
-        left: 0;
-        bottom: 0;
-
-        background: var(--orange);
-
-        transform: scaleY(0);
-        transform-origin: bottom;
-
-        transition: transform .35s ease;
-    }
-
-    .contact-item:hover::before {
-        width: 3px;
-        transform: scaleY(1);
+        padding: 22px 0;
     }
 
     .contact-item:hover {
-        padding: 20px;
-        color: var(--charcoal);
+        padding-left: 12px;
 
-        transform: translateY(-3px);
-
-        background: var(--cream);
-
-        box-shadow: 0 12px 25px rgba(60,40,20,.10);
+        padding-right: 12px;
     }
 
-    .contact-item span {
-        color: var(--orange);
+}
 
-        font-size: 8px;
-        font-weight: 700;
+/* =========================================
+   FOOTER
+========================================= */
 
-        letter-spacing: 3px;
+footer {
+    position: relative;
+
+    padding: 65px 7vw 25px;
+
+    background: var(--charcoal);
+
+    color: var(--cream);
+
+    overflow: hidden;
+}
+
+.footer-main {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 45px;
+
+    border-bottom: 1px solid rgba(250, 245, 235, 0.15);
+}
+
+.footer-main span {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.55;
+}
+
+.footer-main strong {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(35px, 6vw, 75px);
+
+    letter-spacing: -2px;
+
+    font-weight: 400;
+}
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 20px;
+
+    color: rgba(250, 245, 235, 0.45);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.footer-bottom a {
+    color: var(--orange);
+
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--cream);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .footer-main {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
     }
 
-    .contact-item strong {
-        font-size: 12px;
-        line-height: 1.4;
-
-        letter-spacing: .2px;
-
-        word-break: break-word;
+    .footer-main strong {
+        font-size: 48px;
     }
 
-    .contact-item:hover strong {
-        transform: none;
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
     }
 
+}
 
-    /* =========================
-       STAY CONNECTED
-    ========================= */
+/* =========================================
+   MOBILE
+========================================= */
 
-    .more-explore {
-        position: relative;
+@media (max-width: 800px) {
 
-        margin: 0;
-
-        padding: 100px 20px;
-
-        background: var(--orange);
-
-        color: var(--cream);
-
-        text-align: center;
-
-        overflow: hidden;
+    .hero {
+        padding: 30px 15px;
     }
 
-    .more-explore::before {
-        content: "MK";
-
-        position: absolute;
-
-        right: -30px;
-        bottom: -55px;
-
-        font-family: Georgia, "Times New Roman", serif;
-
-        font-size: 210px;
-        font-weight: 700;
-
-        line-height: .8;
-
-        color: rgba(255,255,255,.08);
-
-        pointer-events: none;
+    .hero::before {
+        inset: 12px;
     }
 
-    .more-explore-content {
-        position: relative;
-        z-index: 2;
-
-        max-width: 360px;
-
-        margin: auto;
-
-        padding: 35px 20px;
-
-        border: 1px solid rgba(250,245,235,.35);
+    .hero::after {
+        inset: 18px;
     }
 
-    .more-explore-content p {
-        margin-bottom: 18px;
-
-        color: var(--cream);
-
-        font-size: 9px;
-        font-weight: 700;
-
-        letter-spacing: 4px;
-
-        line-height: 1.6;
+    .invitation {
+        padding: 45px 20px;
     }
 
-    .more-explore-content h2 {
-        margin: 0;
-
-        color: var(--cream);
-
-        font-family: Georgia, "Times New Roman", serif;
-
-        font-size: 42px;
-
-        line-height: .9;
-
-        letter-spacing: -2px;
+    .hero-details {
+        grid-template-columns: 1fr;
     }
 
+    .detail {
+        border-right: none;
 
-    /* =========================
-       FOOTER
-    ========================= */
+        border-bottom: 1px solid var(--line);
+    }
+
+    .detail:last-child {
+        border-bottom: none;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 7px;
+    }
+
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        border-right: none;
+
+        border-bottom: 1px solid rgba(250, 245, 235, 0.35);
+    }
+
+    .info-card:last-child {
+        border-bottom: none;
+    }
 
     footer {
-        padding-top: 55px;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .invitation h1 {
+        font-size: 55px;
+
+        letter-spacing: -3px;
+    }
+
+    .college-brand img {
+        width: 60px;
+        height: 48px;
+    }
+
+    .college-name h3 {
+        font-size: 13px;
+    }
+
+    .explore-section,
+    .about-section,
+    .event-info,
+    .contact-section {
+        padding: 90px 20px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+}
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.section-heading,
+.gallery-item,
+.about-content,
+.info-card,
+.contact-item {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.section-heading.show,
+.gallery-item.show,
+.about-content.show,
+.info-card.show,
+.contact-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* =========================================
+   HERO POLISH + ANIMATION
+========================================= */
+
+.invitation {
+    animation: heroReveal 1.1s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.college-brand {
+    animation: fadeDown 0.8s ease .15s both;
+}
+
+.presented {
+    animation: fadeUp 0.8s ease .25s both;
+}
+
+.invitation h1 {
+    animation: titleReveal 1s cubic-bezier(.2,.7,.2,1) .35s both;
+}
+
+.edition {
+    animation: fadeUp 0.8s ease .5s both;
+}
+
+.invitation-line {
+    animation: lineGrow 0.8s ease .65s both;
+}
+
+.invitation-text {
+    animation: fadeUp 0.8s ease .75s both;
+}
+
+.hero-details {
+    animation: fadeUp 0.8s ease .85s both;
+}
+
+.explore-btn {
+    animation: fadeUp 0.8s ease 1s both;
+}
+
+
+/* =========================================
+   KEYFRAMES
+========================================= */
+
+@keyframes heroReveal {
+
+    from {
+        opacity: 0;
+        transform: scale(.96) translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes titleReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+        letter-spacing: 8px;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: -5px;
+    }
+
+}
+
+
+@keyframes lineGrow {
+
+    from {
+        opacity: 0;
+        width: 0;
+    }
+
+    to {
+        opacity: 1;
+        width: 90px;
+    }
+
+}
+
+
+/* =========================================
+   SUBTLE FLOATING DECORATION
+========================================= */
+
+.hero::before {
+    animation: framePulse 5s ease-in-out infinite;
+}
+
+@keyframes framePulse {
+
+    0%,
+    100% {
+        opacity: .55;
+    }
+
+    50% {
+        opacity: 1;
     }
 
 }
 /* =========================================
-   MOBILE FLOATING NAV — FINAL DESIGN
+   GALLERY LIGHTBOX
 ========================================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(20, 17, 15, 0.96);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.lightbox-image {
+    max-width: 90vw;
+
+    max-height: 88vh;
+
+    object-fit: contain;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+
+/* CLOSE */
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-family: Arial, sans-serif;
+}
+
+.lightbox-close {
+    top: 20px;
+
+    right: 30px;
+
+    font-size: 42px;
+}
+
+
+/* PREVIOUS */
+
+.lightbox-prev {
+    left: 25px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 65px;
+}
+
+
+/* NEXT */
+
+.lightbox-next {
+    right: 25px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 65px;
+}
+
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    color: var(--orange);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .lightbox {
+        padding: 15px;
+    }
+
+    .lightbox-image {
+        max-width: 94vw;
+
+        max-height: 80vh;
+    }
+
+    .lightbox-prev {
+        left: 5px;
+
+        font-size: 45px;
+    }
+
+    .lightbox-next {
+        right: 5px;
+
+        font-size: 45px;
+    }
+
+    .lightbox-close {
+        right: 15px;
+
+        font-size: 35px;
+    }
+
+}
+/* =========================================
+   GALLERY LOADING
+========================================= */
+
+.gallery {
+    position: relative;
+}
+
+.gallery-loading {
+    grid-column: 1 / -1;
+
+    min-height: 180px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(250, 245, 235, 0.55);
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    animation: loadingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+
+    0%,
+    100% {
+        opacity: .35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+/* =========================================
+   FLOATING NAVIGATION
+========================================= */
+
+.floating-nav {
+    position: sticky;
+
+    top: 18px;
+
+    z-index: 1000;
+
+    width: fit-content;
+
+    margin: -30px auto 0;
+
+    padding: 10px 16px;
+
+    display: flex;
+
+    gap: 8px;
+
+    background: rgba(250, 245, 235, 0.88);
+
+    border: 1px solid rgba(23, 22, 21, 0.15);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(50, 35, 20, 0.08);
+
+    border-radius: 50px;
+}
+
+.floating-nav a {
+    padding: 9px 14px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: var(--brown);
+
+    border-radius: 30px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.floating-nav a:hover {
+    background: var(--orange);
+
+    color: var(--cream);
+}
+
+
+/* MOBILE */
 
 @media (max-width: 600px) {
 
     .floating-nav {
-        position: sticky;
-        top: 12px;
+        width: calc(100% - 30px);
 
-        width: calc(100% - 24px);
+        justify-content: center;
 
-        margin: -18px auto 0;
+        gap: 2px;
 
-        padding: 6px;
-
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-
-        gap: 4px;
-
-        background: rgba(250, 245, 235, 0.94);
-
-        border: 1px solid rgba(23, 22, 21, 0.15);
-
-        border-radius: 16px;
-
-        backdrop-filter: blur(14px);
-
-        box-shadow:
-            0 10px 30px rgba(40, 25, 15, 0.12);
+        padding: 7px;
     }
 
     .floating-nav a {
-        position: relative;
+        padding: 9px 10px;
 
-        display: flex;
+        font-size: 7px;
 
-        align-items: center;
-        justify-content: center;
-
-        min-height: 38px;
-
-        padding: 8px 4px;
-
-        border-radius: 11px;
-
-        color: var(--brown);
-
-        font-size: 8px;
-        font-weight: 700;
-
-        letter-spacing: 1.2px;
-
-        transition:
-            background .3s ease,
-            color .3s ease,
-            transform .25s ease,
-            box-shadow .3s ease;
-    }
-
-    /* HOVER */
-
-    .floating-nav a:hover {
-        background: var(--orange);
-
-        color: var(--cream);
-
-        transform: translateY(-2px);
-
-        box-shadow:
-            0 6px 15px rgba(198, 93, 46, 0.25);
-    }
-
-    /* ACTIVE / TAP FEEDBACK */
-
-    .floating-nav a:active {
-        background: var(--orange);
-
-        color: var(--cream);
-
-        transform: scale(.94);
+        letter-spacing: 1.5px;
     }
 
 }
-
-
 /* =========================================
-   MOBILE TOUCH FEEDBACK
+   EXPLORE BUTTON — PREMIUM INTERACTION
 ========================================= */
 
-@media (hover: none) and (pointer: coarse) {
+.explore-btn {
+    position: relative;
+    overflow: hidden;
 
-    .floating-nav a:active {
-        background: var(--orange);
-        color: var(--cream);
+    isolation: isolate;
+}
 
-        transform: scale(.94);
+.explore-btn::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: var(--orange);
+
+    transform: translateY(100%);
+
+    transition: transform 0.4s cubic-bezier(.2,.7,.2,1);
+
+    z-index: -1;
+}
+
+.explore-btn:hover::before {
+    transform: translateY(0);
+}
+
+.explore-btn:hover {
+    border-color: var(--orange);
+
+    color: var(--cream);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(198, 93, 46, 0.2);
+}
+
+.explore-btn span {
+    transition:
+        transform 0.35s ease;
+}
+
+.explore-btn:hover span {
+    transform: translateY(4px);
+}
+/* =========================================
+   EVENT INFO INTRO
+========================================= */
+
+.info-intro {
+    position: relative;
+    z-index: 2;
+
+    max-width: 560px;
+
+    margin: -35px auto 55px;
+
+    text-align: center;
+
+    color: rgba(250, 245, 235, 0.75);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+
+    .info-intro {
+        margin: -25px auto 40px;
+
+        font-size: 13px;
     }
 
+}
+/* =========================================
+   FINAL MOBILE POLISH
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+        padding: 25px 14px;
+    }
+
+    .invitation {
+        width: 100%;
+        padding: 42px 18px;
+    }
+
+    .invitation h1 {
+        font-size: clamp(48px, 16vw, 70px);
+        letter-spacing: -3px;
+    }
+
+    .invitation-text {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+
+    /* CPE BRAND */
+
+    .college-brand {
+        gap: 11px;
+        margin-bottom: 28px;
+        padding: 0;
+    }
+
+    .college-brand img {
+        width: 55px;
+        height: 45px;
+    }
+
+    .college-name {
+        padding-left: 11px;
+    }
+
+    .college-name span {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .college-name h3 {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+
+    /* EVENT DETAILS */
+
+    .detail {
+        padding: 17px 10px;
+    }
+
+    .detail strong {
+        font-size: 10px;
+    }
+
+
+    /* EXPLORE BUTTON */
+
+    .explore-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    /* SECTION SPACING */
+
+    .explore-section,
+    .about-section,
+    .event-info,
+    .contact-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+
+    /* SECTION HEADINGS */
+
+    .section-heading {
+        margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+
+    /* GALLERY */
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .gallery-item {
+        aspect-ratio: 4 / 5;
+    }
+
+
+    /* ABOUT */
+
+    .about-content p:first-child {
+        font-size: 21px;
+        line-height: 1.45;
+    }
+
+    .about-content p:not(:first-child) {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+
+    /* EVENT INFO */
+
+    .info-card {
+        min-height: 220px;
+        padding: 30px;
+    }
+
+    .info-card h3 {
+        font-size: 52px;
+        margin-top: 35px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-item strong {
+        font-size: 13px;
+        word-break: break-word;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+/* TEMPORARY VISIBILITY FIX */
+
+.section-heading,
+.gallery-item,
+.about-content,
+.info-card,
+.contact-item {
+    opacity: 1 !important;
+    transform: none !important;
+}
+.section-heading,
+.about-content,
+.info-card,
+.contact-item {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.gallery-item {
+    opacity: 1 !important;
+    transform: none !important;
+}
+/* =========================================
+   FINAL CPE BRAND FIX
+========================================= */
+
+.college-brand {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 14px !important;
+
+    width: fit-content !important;
+
+    margin: 0 auto 38px !important;
+
+    padding: 0 !important;
+
+    border: none !important;
+    background: transparent !important;
+
+    z-index: 5 !important;
+}
+
+.college-brand img {
+    width: 68px !important;
+    height: 54px !important;
+
+    object-fit: contain !important;
+    margin: 0 !important;
+}
+
+.college-name {
+    text-align: left !important;
+
+    border-left: 1px solid rgba(198, 93, 46, 0.5) !important;
+
+    padding-left: 14px !important;
+    margin: 0 !important;
+}
+
+.college-name span {
+    display: block !important;
+
+    color: var(--orange) !important;
+
+    font-size: 9px !important;
+
+    letter-spacing: 4px !important;
+
+    font-weight: 700 !important;
+
+    margin-bottom: 4px !important;
+}
+
+.college-name h3 {
+    display: block !important;
+
+    margin: 0 !important;
+
+    font-size: 15px !important;
+
+    letter-spacing: 2px !important;
+
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .college-brand {
+        gap: 10px !important;
+        margin-bottom: 28px !important;
+    }
+
+    .college-brand img {
+        width: 55px !important;
+        height: 45px !important;
+    }
+
+    .college-name {
+        padding-left: 10px !important;
+    }
+
+    .college-name span {
+        font-size: 8px !important;
+        letter-spacing: 3px !important;
+    }
+
+    .college-name h3 {
+        font-size: 12px !important;
+        letter-spacing: 1.5px !important;
+    }
+}
+/* =========================================
+   CPE BRAND — TOP OF INVITATION
+========================================= */
+
+.invitation {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.college-brand {
+    order: -10 !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: fit-content !important;
+
+    margin: -25px auto 35px !important;
+
+    gap: 14px !important;
+
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+.college-brand img {
+    width: 68px !important;
+    height: 54px !important;
+
+    object-fit: contain !important;
+
+    margin: 0 !important;
+}
+
+.college-name {
+    text-align: left !important;
+
+    padding-left: 14px !important;
+
+    margin: 0 !important;
+
+    border-left: 1px solid rgba(198, 93, 46, 0.5) !important;
+}
+
+.college-name span {
+    display: block !important;
+
+    color: var(--orange) !important;
+
+    font-size: 9px !important;
+
+    letter-spacing: 4px !important;
+
+    font-weight: 700 !important;
+
+    margin-bottom: 4px !important;
+}
+
+.college-name h3 {
+    display: block !important;
+
+    margin: 0 !important;
+
+    font-size: 15px !important;
+
+    letter-spacing: 2px !important;
+
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .college-brand {
+        margin: -20px auto 28px !important;
+        gap: 10px !important;
+    }
+
+    .college-brand img {
+        width: 55px !important;
+        height: 45px !important;
+    }
+
+    .college-name {
+        padding-left: 10px !important;
+    }
+
+    .college-name span {
+        font-size: 8px !important;
+        letter-spacing: 3px !important;
+    }
+
+    .college-name h3 {
+        font-size: 12px !important;
+        letter-spacing: 1.5px !important;
+    }
+}
+/* =========================================
+   FINAL HERO — SINGLE CENTERED INVITATION
+========================================= */
+
+.hero-layout {
+    display: block !important;
+    width: auto !important;
+}
+
+.invitation {
+    width: min(900px, 92vw) !important;
+    margin: 0 auto !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    text-align: center !important;
+}
+
+/* CPE BRAND ABOVE "CORDIALLY INVITE YOU TO" */
+
+.invitation .college-brand {
+    order: -10 !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: fit-content !important;
+
+    margin: 0 auto 35px !important;
+
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+
+    transform: none !important;
+}
+
+/* CPE LOGO */
+
+.invitation .college-brand img {
+    width: 68px !important;
+    height: 54px !important;
+
+    object-fit: contain !important;
+}
+
+/* CPE JUNIOR COLLEGE */
+
+.invitation .college-name {
+    text-align: left !important;
+}
+
+/* CORDIALLY TEXT */
+
+.invitation .presented {
+    margin-bottom: 20px !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .invitation {
+        width: 100% !important;
+        padding: 45px 20px !important;
+    }
+
+    .invitation .college-brand {
+        margin-bottom: 28px !important;
+    }
+
+}
+.hero-invitation-image {
+    width: min(90%, 520px);
+    margin: 32px auto 36px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-invitation-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 8px;
+}
+/* =========================================
+   FEATURED ABHIRAM STALL
+========================================= */
+
+/* =========================================
+   FEATURED FIRST STALL
+========================================= */
+
+.featured-stall {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 auto 20px;
+}
+
+.featured-photo {
+    width: 360px;
+    max-width: 85%;
+
+    height: auto;
+
+    display: block;
+}
+
+.featured-title {
+    margin-top: 16px;
+
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+
+.featured-title span {
+    display: block;
+}
+
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    .featured-photo {
+        width: 280px;
+        max-width: 80%;
+    }
+
+    .featured-title {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
+}
+/* =========================
+   MORE TO EXPLORE
+========================= */
+
+.more-explore {
+    padding: 140px 8% 120px;
+    text-align: center;
+}
+
+.more-explore-content p {
+    margin: 0 0 18px;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.more-explore-content h2 {
+    margin: 0;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+.stall-number {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--charcoal);
 }
