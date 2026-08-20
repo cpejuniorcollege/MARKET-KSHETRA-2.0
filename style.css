@@ -476,15 +476,15 @@ a {
 .gallery-item {
     position: relative;
 
-    aspect-ratio: 1 / 1.15;
+    aspect-ratio: auto;
 
-    overflow: hidden;
+    overflow: visible;
 
     border: none;
 
     padding: 0;
 
-    background: #242220;
+    background: transparent;
 
     cursor: pointer;
 
