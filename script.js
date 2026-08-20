@@ -59,6 +59,13 @@ stallNumber.className = "stall-number";
 stallNumber.textContent = `STALL ${String(i).padStart(2, "0")}`;
 
 item.appendChild(stallNumber);
+   const stallNumber = document.createElement("div");
+
+stallNumber.className = "stall-number";
+
+stallNumber.textContent = `STALL ${i}`;
+
+item.appendChild(stallNumber);
 
     item.addEventListener("click", function () {
         openPhoto(i);
