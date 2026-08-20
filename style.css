@@ -478,7 +478,7 @@ a {
 
     aspect-ratio: 1 / 1.15;
 
-    overflow: hidden;
+    overflow: visible;
 
     border: none;
 
