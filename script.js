@@ -85,14 +85,30 @@ gallery.appendChild(chanakyaHeading);
 // gallery39.jpg → gallery55.jpg
 // 17 photos
 
-const chanakyaStart = 39;
 const chanakyaTotalPhotos = 17;
 
-for (
-    let i = chanakyaStart;
-    i < chanakyaStart + chanakyaTotalPhotos;
-    i++
-) {
+for (let i = 1; i <= chanakyaTotalPhotos; i++) {
+
+    const item = document.createElement("div");
+
+    item.className = "gallery-item";
+
+    const image = document.createElement("img");
+
+    image.src = `assets/images/chanakya${i}.jpg`;
+
+    image.alt = `Sri Chanakya Degree College photo ${i}`;
+
+    image.loading = "lazy";
+
+    image.onerror = function () {
+        item.remove();
+    };
+
+    item.appendChild(image);
+
+    gallery.appendChild(item);
+}
 
     const item = document.createElement("div");
 
