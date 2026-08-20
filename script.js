@@ -52,6 +52,14 @@ for (let i = 1; i <= cpeTotalPhotos; i++) {
 
     item.appendChild(image);
 
+   const stallNumber = document.createElement("div");
+
+stallNumber.className = "stall-number";
+
+stallNumber.textContent = `STALL ${i}`;
+
+item.appendChild(stallNumber);
+
     item.addEventListener("click", function () {
         openPhoto(i);
     });
@@ -106,6 +114,14 @@ for (let i = 1; i <= chanakyaTotalPhotos; i++) {
     };
 
     item.appendChild(image);
+
+   const stallNumber = document.createElement("div");
+
+stallNumber.className = "stall-number";
+
+stallNumber.textContent = `STALL ${cpeTotalPhotos + i}`;
+
+item.appendChild(stallNumber);
 
     gallery.appendChild(item);
 }
