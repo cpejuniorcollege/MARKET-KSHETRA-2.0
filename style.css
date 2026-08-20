@@ -1302,3 +1302,104 @@ img {
     }
 
 }
+/* =========================================
+   MOBILE FLOATING NAV — FINAL DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+
+    .floating-nav {
+        position: sticky;
+        top: 12px;
+
+        width: calc(100% - 24px);
+
+        margin: -18px auto 0;
+
+        padding: 6px;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 4px;
+
+        background: rgba(250, 245, 235, 0.94);
+
+        border: 1px solid rgba(23, 22, 21, 0.15);
+
+        border-radius: 16px;
+
+        backdrop-filter: blur(14px);
+
+        box-shadow:
+            0 10px 30px rgba(40, 25, 15, 0.12);
+    }
+
+    .floating-nav a {
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        min-height: 38px;
+
+        padding: 8px 4px;
+
+        border-radius: 11px;
+
+        color: var(--brown);
+
+        font-size: 8px;
+        font-weight: 700;
+
+        letter-spacing: 1.2px;
+
+        transition:
+            background .3s ease,
+            color .3s ease,
+            transform .25s ease,
+            box-shadow .3s ease;
+    }
+
+    /* HOVER */
+
+    .floating-nav a:hover {
+        background: var(--orange);
+
+        color: var(--cream);
+
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 6px 15px rgba(198, 93, 46, 0.25);
+    }
+
+    /* ACTIVE / TAP FEEDBACK */
+
+    .floating-nav a:active {
+        background: var(--orange);
+
+        color: var(--cream);
+
+        transform: scale(.94);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE TOUCH FEEDBACK
+========================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .floating-nav a:active {
+        background: var(--orange);
+        color: var(--cream);
+
+        transform: scale(.94);
+    }
+
+}
