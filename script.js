@@ -50,9 +50,15 @@ for (let i = 1; i <= cpeTotalPhotos; i++) {
     console.log("CPE image failed:", image.src);
 };
 
-    item.appendChild(image);
+   const photoWrapper = document.createElement("div");
 
-   const stallNumber = document.createElement("div");
+photoWrapper.className = "photo-wrapper";
+
+photoWrapper.appendChild(image);
+
+item.appendChild(photoWrapper);
+
+const stallNumber = document.createElement("div");
 
 stallNumber.className = "stall-number";
 
