@@ -56,7 +56,7 @@ for (let i = 1; i <= cpeTotalPhotos; i++) {
 
 stallNumber.className = "stall-number";
 
-stallNumber.textContent = `STALL ${i}`;
+stallNumber.textContent = `STALL ${String(i).padStart(2, "0")}`;
 
 item.appendChild(stallNumber);
 
@@ -119,7 +119,7 @@ for (let i = 1; i <= chanakyaTotalPhotos; i++) {
 
 stallNumber.className = "stall-number";
 
-stallNumber.textContent = `STALL ${cpeTotalPhotos + i}`;
+stallNumber.textContent = `STALL ${String(cpeTotalPhotos + i).padStart(2, "0")}`;
 
 item.appendChild(stallNumber);
 
