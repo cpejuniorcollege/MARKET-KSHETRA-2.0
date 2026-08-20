@@ -2359,3 +2359,198 @@ footer {
     position: relative;
     z-index: 5;
 }
+/* =========================================
+   FINAL GALLERY FIX — 3:4 FULL PHOTOS
+========================================= */
+
+.gallery {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    align-items: start;
+
+    overflow: hidden;
+}
+
+.gallery-item {
+    width: 100%;
+    min-width: 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: auto;
+
+    background: transparent;
+
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-item img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    aspect-ratio: 3 / 4;
+
+    object-fit: contain;
+
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+}
+
+
+/* STALL NUMBER */
+
+.stall-number {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    text-align: center;
+
+    color: var(--cream);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    line-height: 1.4;
+
+    position: relative;
+}
+
+
+/* FEATURED FIRST STALL */
+
+.featured-stall {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    margin: 0 auto 25px;
+
+    overflow: hidden;
+}
+
+.featured-photo {
+    display: block;
+
+    width: 360px;
+    max-width: 85%;
+
+    height: auto;
+
+    aspect-ratio: 3 / 4;
+
+    object-fit: contain;
+}
+
+.featured-title {
+    width: 100%;
+
+    margin-top: 14px;
+
+    text-align: center;
+
+    color: var(--cream);
+
+    font-size: 18px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   MOBILE GALLERY
+========================================= */
+
+@media (max-width: 600px) {
+
+    .gallery {
+        width: 100%;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        overflow: hidden;
+    }
+
+    .gallery-item {
+        width: 100%;
+        min-width: 0;
+
+        overflow: hidden;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 3 / 4;
+
+        object-fit: contain;
+    }
+
+    .stall-number {
+        margin-top: 7px;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+    .featured-stall {
+        width: 100%;
+
+        overflow: hidden;
+
+        margin-bottom: 20px;
+    }
+
+    .featured-photo {
+        width: 280px;
+        max-width: 80%;
+
+        height: auto;
+
+        aspect-ratio: 3 / 4;
+
+        object-fit: contain;
+    }
+
+    .featured-title {
+        font-size: 14px;
+
+        letter-spacing: 1.5px;
+    }
+}
