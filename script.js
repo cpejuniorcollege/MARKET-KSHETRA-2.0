@@ -47,8 +47,8 @@ for (let i = 1; i <= cpeTotalPhotos; i++) {
     image.loading = "lazy";
 
     image.onerror = function () {
-        item.remove();
-    };
+    console.log("CPE image failed:", image.src);
+};
 
     item.appendChild(image);
 
