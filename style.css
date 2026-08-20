@@ -462,6 +462,17 @@ a {
     gap: 14px;
 }
 
+.gallery-college-heading {
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+    color: var(--cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin: 35px 0 25px;
+}
+
 .gallery-item {
     position: relative;
 
