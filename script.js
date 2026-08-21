@@ -15,17 +15,6 @@ const stallDetails = {};
    CREATE GALLERY
 ========================================= */
 
-// ---------- CPE JUNIOR COLLEGE ----------
-
-const cpeHeading = document.createElement("h2");
-
-cpeHeading.className = "gallery-college-heading";
-
-cpeHeading.textContent = "CPE JUNIOR COLLEGE";
-
-gallery.appendChild(cpeHeading);
-
-
 /* =========================================
    STALL GROUPS
 ========================================= */
@@ -42,7 +31,178 @@ for (let i = 1; i <= 112; i++) {
         cpeStalls.push(i);
     }
 }
-   
+ /* =========================================
+   CPE JUNIOR COLLEGE
+========================================= */
+
+const cpeHeading = document.createElement("h2");
+
+cpeHeading.className = "gallery-college-heading";
+cpeHeading.textContent = "CPE JUNIOR COLLEGE";
+
+gallery.appendChild(cpeHeading);
+
+
+/* =========================================
+   ABHIRAM STALL — STALL 01
+========================================= */
+
+const abhiramItem = document.createElement("div");
+
+abhiramItem.className = "gallery-item abhiram-stall";
+
+const abhiramImage = document.createElement("img");
+
+abhiramImage.src = "assets/images/gallery1.jpg";
+abhiramImage.alt = "Abhiram Stall";
+abhiramImage.loading = "lazy";
+
+const abhiramWrapper = document.createElement("div");
+
+abhiramWrapper.className = "photo-wrapper";
+
+abhiramWrapper.appendChild(abhiramImage);
+abhiramItem.appendChild(abhiramWrapper);
+
+const abhiramNumber = document.createElement("div");
+
+abhiramNumber.className = "stall-number";
+abhiramNumber.textContent = "STALL 01";
+
+abhiramItem.appendChild(abhiramNumber);
+
+abhiramItem.addEventListener("click", function () {
+    openPhoto(1);
+});
+
+gallery.appendChild(abhiramItem);  
+/* =========================================
+   CPE STALLS
+   STALL 02–07 RESERVED FOR FUTURE
+========================================= */
+
+cpeStalls.forEach(function (stallNumber) {
+
+    // Stall 01 already created separately
+    if (stallNumber === 1) {
+        return;
+    }
+
+    // Stall 02–07 are currently empty
+    if (stallNumber >= 2 && stallNumber <= 7) {
+        return;
+    }
+
+    const item = document.createElement("div");
+
+    item.className = "gallery-item";
+
+    const image = document.createElement("img");
+
+    image.src = `assets/images/gallery${stallNumber}.jpg`;
+
+    image.alt = `CPE Junior College Stall ${stallNumber}`;
+
+    image.loading = "lazy";
+
+    image.onerror = function () {
+        console.log("CPE image failed:", image.src);
+    };
+
+    const photoWrapper = document.createElement("div");
+
+    photoWrapper.className = "photo-wrapper";
+
+    photoWrapper.appendChild(image);
+
+    item.appendChild(photoWrapper);
+
+    const stallNumberText = document.createElement("div");
+
+    stallNumberText.className = "stall-number";
+
+    stallNumberText.textContent =
+        `STALL ${String(stallNumber).padStart(2, "0")}`;
+
+    item.appendChild(stallNumberText);
+
+    item.addEventListener("click", function () {
+        openPhoto(stallNumber);
+    });
+
+    gallery.appendChild(item);
+});
+/* =========================================
+   SRI CHANAKYA DEGREE COLLEGE
+========================================= */
+
+const chanakyaGap = document.createElement("div");
+
+chanakyaGap.className = "college-gallery-gap";
+
+gallery.appendChild(chanakyaGap);
+
+
+const chanakyaHeading = document.createElement("h2");
+
+chanakyaHeading.className = "gallery-college-heading";
+
+chanakyaHeading.textContent =
+    "SRI CHANAKYA DEGREE COLLEGE";
+
+gallery.appendChild(chanakyaHeading);
+
+
+/* =========================================
+   CHANAKYA STALLS
+========================================= */
+
+chanakyaStalls.forEach(function (stallNumber) {
+
+    const item = document.createElement("div");
+
+    item.className = "gallery-item";
+
+    const image = document.createElement("img");
+
+    image.src =
+        `assets/images/chanakya${stallNumber}.jpg`;
+
+    image.alt =
+        `Sri Chanakya Degree College Stall ${stallNumber}`;
+
+    image.loading = "lazy";
+
+    image.onerror = function () {
+        console.log(
+            "Chanakya image failed:",
+            image.src
+        );
+    };
+
+    const photoWrapper = document.createElement("div");
+
+    photoWrapper.className = "photo-wrapper";
+
+    photoWrapper.appendChild(image);
+
+    item.appendChild(photoWrapper);
+
+    const stallNumberText = document.createElement("div");
+
+    stallNumberText.className = "stall-number";
+
+    stallNumberText.textContent =
+        `STALL ${String(stallNumber).padStart(2, "0")}`;
+
+    item.appendChild(stallNumberText);
+
+    item.addEventListener("click", function () {
+        openPhoto(stallNumber);
+    });
+
+    gallery.appendChild(item);
+});
 /* =========================================
    LIGHTBOX
 ========================================= */
