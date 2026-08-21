@@ -26,119 +26,23 @@ cpeHeading.textContent = "CPE JUNIOR COLLEGE";
 gallery.appendChild(cpeHeading);
 
 
-// CPE PHOTOS
-// gallery1.jpg → gallery38.jpg
-// Future CPE photos can continue from gallery39.jpg
+/* =========================================
+   STALL GROUPS
+========================================= */
 
-const cpeTotalPhotos = 59;
+const chanakyaStalls = [
+    9, 29, 30, 33, 51, 52, 63, 64, 70, 72,
+    78, 83, 84, 85, 100, 101, 102, 109, 110, 112
+];
 
-for (let i = 1; i <= cpeTotalPhotos; i++) {
+const cpeStalls = [];
 
-    const item = document.createElement("div");
-
-    item.className = "gallery-item";
-
-    const image = document.createElement("img");
-
-    image.src = `assets/images/gallery${i}.jpg`;
-
-    image.alt = `CPE Junior College photo ${i}`;
-
-    image.loading = "lazy";
-
-    image.onerror = function () {
-    console.log("CPE image failed:", image.src);
-};
-
-   const photoWrapper = document.createElement("div");
-
-photoWrapper.className = "photo-wrapper";
-
-photoWrapper.appendChild(image);
-
-item.appendChild(photoWrapper);
-
-const stallNumber = document.createElement("div");
-
-stallNumber.className = "stall-number";
-
-stallNumber.textContent = `STALL ${String(i).padStart(2, "0")}`;
-
-item.appendChild(stallNumber);
-
-    item.addEventListener("click", function () {
-        openPhoto(i);
-    });
-
-    gallery.appendChild(item);
+for (let i = 1; i <= 112; i++) {
+    if (!chanakyaStalls.includes(i)) {
+        cpeStalls.push(i);
+    }
 }
-
-
-// ---------- GAP ----------
-
-const galleryGap = document.createElement("div");
-
-galleryGap.className = "college-gallery-gap";
-
-gallery.appendChild(galleryGap);
-
-
-// ---------- SRI CHANAKYA DEGREE COLLEGE ----------
-
-const chanakyaHeading = document.createElement("h2");
-
-chanakyaHeading.className = "gallery-college-heading";
-
-chanakyaHeading.textContent =
-    "SRI CHANAKYA DEGREE COLLEGE";
-
-gallery.appendChild(chanakyaHeading);
-
-
-// CHANAKYA PHOTOS
-// gallery39.jpg → gallery55.jpg
-// 17 photos
-
-const chanakyaTotalPhotos = 17;
-
-for (let i = 1; i <= chanakyaTotalPhotos; i++) {
-
-    const item = document.createElement("div");
-
-    item.className = "gallery-item";
-
-    const image = document.createElement("img");
-
-    image.src = `assets/images/chanakya${i}.jpg`;
-
-    image.alt = `Sri Chanakya Degree College photo ${i}`;
-
-    image.loading = "lazy";
-
-   const photoWrapper = document.createElement("div");
-
-photoWrapper.className = "photo-wrapper";
-
-photoWrapper.appendChild(image);
-
-item.appendChild(photoWrapper);
-
-const stallNumber = document.createElement("div");
-
-stallNumber.className = "stall-number";
-
-stallNumber.textContent =
-    `STALL ${String(cpeTotalPhotos + i).padStart(2, "0")}`;
-
-item.appendChild(stallNumber);
-
-   item.addEventListener("click", function () {
-    openPhoto(cpeTotalPhotos + i);
-});
-
-    gallery.appendChild(item);
-}
-
+   
 /* =========================================
    LIGHTBOX
 ========================================= */
