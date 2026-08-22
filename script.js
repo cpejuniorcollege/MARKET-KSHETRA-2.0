@@ -27,10 +27,14 @@ const chanakyaStalls = [
 const cpeStalls = [];
 
 for (let i = 1; i <= 112; i++) {
-    if (!chanakyaStalls.includes(i)) {
+    if (
+        !chanakyaStalls.includes(i) &&
+        ![13, 104, 106].includes(i)
+    ) {
         cpeStalls.push(i);
     }
 }
+
 const unallottedStalls = [
     13, 72, 78, 102, 104, 106, 109, 110, 112
 ];
