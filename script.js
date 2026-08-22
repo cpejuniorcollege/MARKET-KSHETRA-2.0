@@ -161,7 +161,10 @@ gallery.appendChild(chanakyaHeading);
 ========================================= */
 
 chanakyaStalls.forEach(function (stallNumber) {
-
+   
+if (unallottedStalls.includes(stallNumber)) {
+    return;
+}
     const item = document.createElement("div");
 
     item.className = "gallery-item";
