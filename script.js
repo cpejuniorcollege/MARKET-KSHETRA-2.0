@@ -85,7 +85,10 @@ gallery.appendChild(abhiramItem);
 ========================================= */
 
 cpeStalls.forEach(function (stallNumber) {
-
+   
+if (unallottedStalls.includes(stallNumber)) {
+    return;
+}
     // Stall 01 already created separately
     if (stallNumber === 1) {
         return;
